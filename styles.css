@@ -62,3 +62,9 @@ button {
     box-shadow: 0.2rem 0.2rem var(--darker-clr);   
 }
 
+button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    background-color: rgb(11, 171, 223);
+}
+
