@@ -1,6 +1,4 @@
-*{
-    border: solid 1px red;
-}
+
 :root{
     --primary-clr: #747474;
     --lighter-clr: #B1B1B1;
@@ -27,11 +25,13 @@ body{
     box-shadow: 0.2rem 0.2rem var(--darker-clr); 
 }
 
-.program{
+.drawingPad{
     width: 38vh;
     height: 38vh;
     background-color: white;
+    border: solid 1px var(--font-clr);
 }
+
 
 .page,
 .content,
