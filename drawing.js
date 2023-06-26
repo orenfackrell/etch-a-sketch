@@ -35,9 +35,32 @@ function makeGrid(userChoice) {
         cell.style.border = 'solid black 1px';
         drawingPad.appendChild(cell);
 
+        function draw(){
         cell.addEventListener('mouseover', e =>{
             cell.style.backgroundColor = 'black';
         });
+        }
+        drawButton.addEventListener('click', () => { 
+        draw()
+        });
+
+        function eraser(){
+        cell.addEventListener('mouseover', e =>{
+            cell.style.backgroundColor = 'white';
+        });
+        }
+        eraserButton.addEventListener('click', () => { 
+        eraser()
+        });
+
+        function clearGird(){
+        
+            clearButton.addEventListener('click', e=>{
+                cell.style.backgroundColor = 'white'
+                })
+            }
+    
+        clearGird();
     }
 };
 
