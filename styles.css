@@ -16,9 +16,13 @@ body{
     justify-content: center;
 }
 
+p {
+    font-size: small;
+}
+
 .content{
     padding: 1rem;
-    margin: 10vh 10vh;
+    margin: 5vh 10vh;
     background-color: var(--lighter-clr);
     max-width: 80vh;
     border-radius: 1rem;
@@ -26,8 +30,8 @@ body{
 }
 
 .drawingPad{
-    width: 38vh;
-    height: 38vh;
+    width: 60vh;
+    height: 60vh;
     background-color: white;
     border: solid 1px var(--font-clr);
     display: grid;
