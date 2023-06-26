@@ -30,6 +30,7 @@ body{
     height: 38vh;
     background-color: white;
     border: solid 1px var(--font-clr);
+    display: grid;
 }
 
 

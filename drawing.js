@@ -4,19 +4,11 @@ const clearButton = document.querySelector('.button3');
 const gridButton = document.querySelector('.button4');
 const drawingPad = document.querySelector('.drawingPad');
 
-function makeGrid(userChoice){
-    for (let i = 0; i < userChoice**2; i++){
+gridButton.addEventListener('click', () => { 
+    setSize()
+});
 
-        let cell = document.createElement('div');
-        cell.className='cells';
-        cell.style.border = 'solid black 1px';
-        drawingPad.style.display = 'grid';
-        drawingPad.style.gridTemplateColumns = 'repeat(16, auto)';
-        drawingPad.appendChild(cell)
-    }
-};
-
-gridButton.addEventListener('click', e => { 
+function setSize(){
     let userInput = prompt("Give your desired size of drawing grid, only integer values from 16-100 are valid");
     
     userChoice = parseInt(userInput);
@@ -25,11 +17,24 @@ gridButton.addEventListener('click', e => {
     }  else {
         alert("Please choose a value between 16-100.")
     };
+    drawingPad.style.gridTemplateColumns = `repeat(${userChoice}, 1fr)`;
+    drawingPad.style.gridTemplateRows = `repeat(${userChoice}, 1fr)`;
+    makeGrid(userChoice)
+}
 
-makeGrid(+userChoice)
-});
-// this will not work with all values given.
-// must make a slider that will allow for values that will make a grid.
+
+function makeGrid(userChoice){
+    for (let i = 0; i < userChoice**2; i++){
+
+        let cell = document.createElement('div');
+        cell.className='cells';
+        cell.style.border = 'solid black 1px';
+        drawingPad.style.display = 'grid';
+        drawingPad.style.gridTemplateColumns = `repeat(${userChoice}, 1fr)`;
+        drawingPad.appendChild(cell)
+    }
+};
+
+
 
 makeGrid(16)
-// the page will have a 16x16 grid by default
