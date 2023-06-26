@@ -8,11 +8,11 @@ gridButton.addEventListener('click', () => {
     setSize()
 });
 
-function setSize(){
+function setSize() {
     let userInput = prompt("Give your desired size of drawing grid, only integer values from 16-100 are valid");
     
     userChoice = parseInt(userInput);
-    if (userChoice >= 16 && userChoice <= 100){
+    if (userChoice >= 16 && userChoice <= 100) {
         console.log(userChoice)    
     }  else {
         alert("Please choose a value between 16-100.")
@@ -23,18 +23,21 @@ function setSize(){
 }
 
 
-function makeGrid(userChoice){
-    for (let i = 0; i < userChoice**2; i++){
+function makeGrid(userChoice) {
+    
+    drawingPad.style.gridTemplateColumns = `repeat(${userChoice}, 1fr)`;
+    drawingPad.style.gridTemplateRows = `repeat(${userChoice}, 1fr)`;
+
+    for (let i = 0; i < userChoice**2; i++) {
 
         let cell = document.createElement('div');
         cell.className='cells';
         cell.style.border = 'solid black 1px';
-        drawingPad.style.display = 'grid';
-        drawingPad.style.gridTemplateColumns = `repeat(${userChoice}, 1fr)`;
-        drawingPad.appendChild(cell)
+        drawingPad.appendChild(cell);
+
+        cell.addEventListener('mouseover', e =>{
+            cell.style.backgroundColor = 'black';
+        });
     }
 };
 
-
-
-makeGrid(16)
