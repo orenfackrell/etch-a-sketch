@@ -1,7 +1,28 @@
-export function draw(cell) {
-  cell.style.backgroundColor = 'black';
+export function draw() {
+  const cells = document.querySelectorAll('cell');
+  cells.forEach((cell) => {
+    const currentCell = cell;
+    currentCell.addEventListener('mouseover', () => {
+      currentCell.style.backgroundColor = 'black';
+    });
+  });
 }
 
-export function erase(cell) {
-  cell.style.backgroundColor = 'white';
+export function eraser() {
+  const cells = document.querySelectorAll('cell');
+  cells.forEach((cell) => {
+    const currentCell = cell;
+    currentCell.addEventListener('mouseover', () => {
+      currentCell.style.backgroundColor = 'white';
+    });
+  });
+}
+
+export function clear() {
+  const drawingPad = document.querySelector('.drawingPad');
+  const cells = drawingPad.querySelectorAll('.cell');
+  cells.forEach((cell) => {
+    const currentCell = cell;
+    currentCell.style.backgroundColor = 'white';
+  });
 }
