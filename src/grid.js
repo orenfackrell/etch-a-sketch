@@ -18,16 +18,15 @@ export function createGrid(userChoice, drawingPad) {
 }
 
 export function setSize() {
-  console.log('working');
   const userInput = prompt(
     'Give your desired size of drawing grid, only integer values from 16-100 are valid',
   );
   const userChoice = parseInt(userInput, 10);
-  if (userChoice <= 16 || userChoice >= 100) {
+  if (userChoice < 16 || userChoice > 100) {
     alert('Please choose a value between 16-100.');
     return null;
   }
-  const drawingPad = document.querySelector('.drawingPad'); // replace '.drawingPad' with the correct selector for your drawing pad
+  const drawingPad = document.querySelector('.drawingPad');
   createGrid(userChoice, drawingPad);
   return userChoice;
 }

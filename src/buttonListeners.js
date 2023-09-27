@@ -1,29 +1,22 @@
-import { draw, erase } from './drawing';
+import { clear, draw, eraser } from './drawing';
+import { setSize } from './grid';
 
-function addEventListeners(
-  drawButton,
-  eraserButton,
-  clearButton,
-  gridButton,
-  drawingPad,
-) {
+function addEventListeners(drawButton, eraserButton, clearButton, gridButton) {
   drawButton.addEventListener('click', () => {
     draw();
   });
 
   eraserButton.addEventListener('click', () => {
-    erase();
+    eraser();
   });
 
   clearButton.addEventListener('click', () => {
-    const cells = drawingPad.querySelectorAll('.cell');
-    cells.forEach((cell) => {
-      const currentCell = cell;
-      currentCell.style.backgroundColor = 'white';
-    });
+    clear();
   });
 
-  gridButton.addEventListener('click', () => {});
+  gridButton.addEventListener('click', () => {
+    setSize();
+  });
 }
 
 export default addEventListeners;
