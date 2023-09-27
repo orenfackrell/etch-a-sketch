@@ -1,6 +1,6 @@
 import './styles.css';
 import addEventListeners from './buttonListeners';
-import createGrid from './grid';
+import { createGrid, setSize } from './grid';
 
 const drawButton = document.querySelector('.button1');
 const eraserButton = document.querySelector('.button2');
@@ -12,5 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListeners(drawButton, eraserButton, clearButton, gridButton);
 });
 
-const userChoice = 16;
-createGrid(userChoice, drawingPad);
+createGrid(16, drawingPad);
