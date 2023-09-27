@@ -1,6 +1,6 @@
 import './styles.css';
 import addEventListeners from './buttonListeners';
-import { createGrid, setSize } from './grid';
+import { createGrid } from './grid';
 
 const drawButton = document.querySelector('.button1');
 const eraserButton = document.querySelector('.button2');

@@ -3,7 +3,6 @@ import { setSize } from './grid';
 
 function addEventListeners(drawButton, eraserButton, clearButton, gridButton) {
   drawButton.addEventListener('click', () => {
-    console.log('draw button working!');
     draw();
   });
 
